@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercise 14 - Hacker's Terminal</title>
+    <style>
+        body {
+            background-color: #00FF00;
+            /* Green background */
+            font-family: 'Courier New', monospace;
+            color: #00FF00;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .terminal {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 20px;
+            border: 2px solid #00FF00;
+            border-radius: 10px;
+            background-color: black;
+            white-space: pre;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        function main(hehe) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log(hehe)
+                    resolve("success")
+                }, 2000);
+            })
+        }
+
+        const exe = async function hehe() {
+            await main("initializing hacking...")
+            await main("readind your files....")
+            await main("password files detected....")
+            await main("sending all password and personal files to server..")
+            await main("cleaning up..")
+        }
+        exe()
+    </script>
+</body>
+
+</html>

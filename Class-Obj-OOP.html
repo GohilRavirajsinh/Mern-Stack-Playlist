@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Object OOP</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // let obj = {
+    //     a: 1,
+    //     b: "Goku"
+    // }
+
+    // console.log(obj);
+
+    // let animal = {
+    //     eats: true
+    // }
+
+    // let rabbit = {
+    //     jumps: true
+    // }
+
+    // let a = rabbit.__proto__ = animal;
+    // console.log(a);
+
+    class Animal {
+        constructor(name) {
+            this.name = name;
+            console.log('Object is Crated...');
+        }
+
+        eats() {
+            console.log('Khaa Rha Hoon...');
+        }
+        jumps() {
+            console.log('Khud Rha Hoon...');
+        }
+    }
+
+    class Lion extends Animal {
+        constructor(name) {
+            super(name)
+            console.log('Object is Crated...');
+        }
+        eats() {
+            super.eats()
+            console.log('Khaa Rha Hoon with Roar...');
+        }
+        roar() {
+            console.log('Mein Bhonk Rha Hun...');
+
+        }
+    }
+
+    let a = new Animal("Bunny");
+    console.log(a);
+
+    let b = new Lion("Shera");
+    console.log(b);
+
+</script>
+
+</html>

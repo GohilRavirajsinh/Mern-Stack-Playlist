@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 10px;
+            padding: 10px;
+            border: solid black;
+            background-color: blueviolet;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .childContainer {
+            margin: 10px;
+            padding: 10px;
+            border: solid black;
+            background-color: brown;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .child {
+            margin: 10px;
+            padding: 10px;
+            border: solid black;
+            background-color: cadetblue;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        I am container
+        <div class="childContainer">
+            I am childContainer
+            <div class="child">
+                I am child
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    // let button = document.getElementById("btn")
+    // button.addEventListener("click", () => {
+    //     // document.querySelector(".box").innerHTML = "<b>Yayy Text is Changed!</b>"
+    // })
+    // button.addEventListener("contextmenu", () => {
+    //     alert("Dont hack us by Right Click Please")
+    // })
+    // document.addEventListener("keydown", (e) => {
+    //     console.log(e.key, e.keyCode)
+    // })
+
+    document.querySelector(".child").addEventListener("click", (e) => {
+        e.stopPropagation()
+        alert("child Was Clicking")
+    })
+    document.querySelector(".childContainer").addEventListener("click", (e) => {
+        e.stopPropagation()
+        alert("childContainer Was Clicking")
+    })
+    document.querySelector(".container").addEventListener("click", (e) => {
+        e.stopPropagation()
+        alert("container Was Clicking")
+    })
+
+    function getRandomNumber() {
+        let val1 = Math.ceil(Math.random() * 255)
+        let val2 = Math.ceil(Math.random() * 255)
+        let val3 = Math.ceil(Math.random() * 255)
+        return `rgb(${val1}, ${val2}, ${val3})`
+    }
+
+    // let a = setInterval(() => {
+    //     document.querySelector(".childContainer").style.background = getRandomNumber()
+    // }, 1000)
+
+    // clearInterval(a)
+
+    let a = setTimeout(() => {
+        document.querySelector(".childContainer").style.background = getRandomNumber()
+    }, 3000)
+
+    clearTimeout(a)
+</script>
+
+</html>
