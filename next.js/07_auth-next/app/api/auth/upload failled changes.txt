@@ -1,0 +1,4 @@
+The folder name is not 'nextauth' 
+folder name is '[...nextauth]'
+
+for upload failed reason to change folder name...!
